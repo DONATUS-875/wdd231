@@ -1,45 +1,181 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 
+    <title>Course Home - WDD 231</title>
+    <meta name="description" content="WDD 231 Course Home Page for Web Frontend Development I.">
+    <meta name="author" content="Ahule Tertindi Donatus">
+
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
+    <!-- Stylesheets: keep this order -->
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
 
+    <!-- JavaScript -->
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/course.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
 </head>
+
 <body>
-    <header>
-        <img src="images/home.svg" alt="site logo" width="512" height="512">
-        <span>Donatus Site Title</span>
-        <button id="hamburger-button" class="hamburger"></button>
-    </header>
-    <nav id="nav-bar" class="navigation">
-        <ul>
-            <li ><a href="#">News & Events</a></li>
-            <li class="current"><a href="#">Dedicated Temples</a></li>
-            <li><a href="#">Announced Temples</a></li>
-        </ul>
-    </nav>
-    <main>
-        <h1>Dedicated Temples</h1>
-    </main>
-    <footer>
-        <div class="social">
-            <a href="https://www.facebook.com/paul.cheney.1422/" target="_blank"><img src="images/facebook.svg" alt="Facebook" width="16" height="16"></a>
-            <a href="https://github.com/paulcheney" target="_blank"><img src="images/github.svg" alt="github" width="16" height="16"></a>
-            <a href="https://www.linkedin.com/in/pcheney/" target="_blank"><img src="images/linkedin.svg" alt="linked in" width="16" height="16"></a>
-            <a href="https://x.com/" target="_blank"><img src="images/twitter-x.svg" alt="twitter" width="16" height="16"></a>
-        </div>
-        <p>Copyright symbol and current year</p>
-        <p>Last Modified</p>
-    </footer>
-    <script src="scripts/navigation.js"></script>
+    <div class="page-container">
+
+        <header>
+            <img src="images/home.svg"
+                 alt="Site logo"
+                 width="48"
+                 height="48">
+
+            <span>Ahule Tertindi Donatus</span>
+
+            <button
+                id="hamburger-button"
+                class="hamburger"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-controls="nav-bar"
+                aria-expanded="false">
+                ☰
+            </button>
+        </header>
+
+        <nav id="nav-bar" class="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html" class="current" aria-current="page">Home</a></li>
+                <li><a href="code-along-header/index.html">Chamber</a></li>
+                <li><a href="#">Final</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>Home</h1>
+
+            <div class="about-section">
+                <section class="about-me">
+                    <h2>About Me</h2>
+                    <p>
+                        I am Ahule Tertindi Donatus, a student of BYU-Pathway 
+                        World-wide pursuing software development, currently on 
+                        my first certificate learning web frontend development I.
+                        I am developing my skills in HTML, CSS, and JavaScript
+                        as I work toward creating responsive, accessible, and
+                        user-friendly websites.
+                    </p>
+                </section>
+
+                <section class="student-photo">
+                    <h2>Student Photo</h2>
+                    <div class="photo-container">
+                        <img
+                            src="images/student-photo.jpg"
+                            alt="Photo of Ahule Tertindi Donatus"
+                            width="200"
+                            height="200">
+                    </div>
+                </section>
+            </div>
+
+            <section class="courses-section">
+                <h2>Web and Computer Programming Certificate Courses</h2>
+
+                <div class="course-filters" aria-label="Filter courses">
+                    <button
+                        id="filter-all"
+                        class="filter-btn active"
+                        type="button"
+                        aria-pressed="true">
+                        All
+                    </button>
+
+                    <button
+                        id="filter-cse"
+                        class="filter-btn"
+                        type="button"
+                        aria-pressed="false">
+                        CSE
+                    </button>
+
+                    <button
+                        id="filter-wdd"
+                        class="filter-btn"
+                        type="button"
+                        aria-pressed="false">
+                        WDD
+                    </button>
+                </div>
+
+                <div
+                    id="courses-list"
+                    class="courses-list"
+                    aria-live="polite">
+                </div>
+
+                <p class="credits">
+                    The total credits for courses listed above is
+                    <span id="credits-value">0</span>
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <div class="social-links">
+                <a
+                    href="https://www.linkedin.com/in/ahule-donatus-441739271?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit my LinkedIn profile">
+                    <img
+                        src="images/linkedin.svg"
+                        alt="LinkedIn"
+                        width="32"
+                        height="32">
+                </a>
+
+                <a
+                    href="https://github.com/DONATUS-875/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit my GitHub profile">
+                    <img
+                        src="images/github.svg"
+                        alt="GitHub"
+                        width="32"
+                        height="32">
+                </a>
+
+                <a
+                    href="https://x.com/DonatusIsa25709"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit my X profile">
+                    <img
+                        src="images/twitter-x.svg"
+                        alt="X"
+                        width="32"
+                        height="32">
+                </a>
+            </div>
+
+            <p>
+                &copy; <span id="currentyear"></span>
+                &bull; Ahule Tertindi Donatus
+                &bull; Abuja, Nigeria
+            </p>
+
+            <p>
+                Last Modified:
+                <span id="lastModified"></span>
+            </p>
+        </footer>
+
+    </div>
 </body>
 </html>

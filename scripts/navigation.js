@@ -1,9 +1,20 @@
-// Store the selected element that we are going to use
-const navbutton = document.querySelector("#hamburger-button");
-const navlinks = document.querySelector("#nav-bar");
 
-// Toggle the show class off and on
-navbutton.addEventListener("click", () => {
-    navbutton.classList.toggle("show");
-    navlinks.classList.toggle("show");
+// Select the hamburger button and navigation menu
+const menuButton = document.querySelector("#hamburger-button");
+const navigation = document.querySelector("#nav-bar");
+
+// Open and close the navigation menu when the button is clicked
+menuButton.addEventListener("click", () => {
+    const isOpen = navigation.classList.toggle("open");
+
+    // Update accessibility attributes
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+
+    menuButton.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
+
+    // Change the hamburger icon to an X when the menu is open
+    menuButton.textContent = isOpen ? "✕" : "☰";
 });

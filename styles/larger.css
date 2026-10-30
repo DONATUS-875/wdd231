@@ -1,28 +1,159 @@
-@media only screen and (min-width: 38rem) {
-    header, main, nav, footer {
-        max-width: 900px;
+
+/* ========================================
+   WDD 231 - Course Home Page
+   Larger Screen Styles
+   ======================================== */
+
+@media screen and (min-width: 600px) {
+
+    /* ---------- Page Layout ---------- */
+    body {
+        padding: 1.5rem;
+    }
+
+    .page-container {
+        max-width: 1000px;
         margin: 0 auto;
     }
-    
+
+    /* ---------- Header ---------- */
     header {
-        grid-template-columns: 24px auto;
+        grid-template-columns: 48px 1fr;
+        gap: 0.75rem;
+        padding: 0.75rem;
     }
-    
-    
+
+    header span {
+        font-size: 1.25rem;
+    }
+
+    /* ---------- Hamburger ---------- */
     .hamburger {
         display: none;
     }
 
+    /* ---------- Desktop Navigation ---------- */
     .navigation {
         display: block;
-        border-bottom: solid 1px #eee;
     }
 
     .navigation ul {
-        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: stretch;
+    }
+
+    .navigation li {
+        flex: 1;
+        border-bottom: none;
     }
 
     .navigation a {
-        border: none;
+        height: 100%;
+        padding: 0.85rem 1rem;
+        font-size: 1rem;
+    }
+
+    /* ---------- Main Content ---------- */
+    main {
+        padding: 0.75rem;
+    }
+
+    h1 {
+        margin: 0.5rem 0 1rem;
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        padding: 0.75rem;
+        font-size: 1.1rem;
+    }
+
+    /* ---------- About Me and Student Photo ---------- */
+    .about-section {
+        grid-template-columns: 2fr 1fr;
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .about-me,
+    .student-photo {
+        min-width: 0;
+    }
+
+    .about-me p {
+        padding: 1rem;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* ---------- Student Photo ---------- */
+    .photo-container {
+        min-height: 220px;
+        padding: 1rem;
+    }
+
+    .student-photo img {
+        width: 200px;
+        max-width: 100%;
+        height: 200px;
+    }
+
+    /* ---------- Course Filters ---------- */
+    .courses-section {
+        margin-top: 1.25rem;
+    }
+
+    .course-filters {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.75rem;
+        margin-top: 1rem;
+    }
+
+    .filter-btn {
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+
+    /* ---------- Course Cards ---------- */
+    .courses-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.75rem;
+        margin-top: 1rem;
+    }
+
+    .course-card {
+        min-width: 0;
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+
+    /* ---------- Credit Total ---------- */
+    .credits {
+        margin: 1rem 0;
+        font-size: 1rem;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+        margin-top: 1.25rem;
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ---------- Extra-Wide Screens ---------- */
+@media screen and (min-width: 1000px) {
+
+    .page-container {
+        max-width: 1000px;
+    }
+
+    .about-section {
+        gap: 1.25rem;
+    }
+
+    .about-me p {
+        padding: 1.25rem;
     }
 }

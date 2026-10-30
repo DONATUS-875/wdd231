@@ -1,0 +1,260 @@
+/* ==============================
+   W01 Course Home - Base Styles
+   Mobile First
+   ============================== */
+
+/* ---------- General ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 1rem;
+    font-family: "Josefin Sans", sans-serif;
+    background-color: #efffed;
+    color: #000;
+}
+
+.page-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+
+/* ---------- Header ---------- */
+
+header {
+    display: grid;
+    grid-template-columns: 48px 1fr 44px;
+    align-items: center;
+    min-height: 54px;
+    padding: 0.25rem 0.5rem;
+}
+
+header img {
+    display: block;
+    width: 48px;
+    height: 48px;
+}
+
+header span {
+    padding-left: 0.25rem;
+    font-size: 0.85rem;
+}
+
+
+/* ---------- Hamburger ---------- */
+
+.hamburger {
+    display: block;
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+/* ---------- Navigation ---------- */
+
+.navigation {
+    display: none;
+    background-color: #222;
+}
+
+.navigation.open {
+    display: block;
+}
+
+.navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation li {
+    border-bottom: 1px solid #555;
+}
+
+.navigation a {
+    display: block;
+    padding: 0.6rem;
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.navigation a:hover,
+.navigation a.current {
+    background-color: #444;
+}
+
+
+/* ---------- Main ---------- */
+
+main {
+    padding: 0 0.35rem;
+}
+
+h1 {
+    margin: 0.35rem 0 0.4rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+h2 {
+    margin: 0;
+    padding: 0.2rem;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    font-size: 0.65rem;
+    font-weight: 600;
+}
+
+
+/* ---------- About Me ---------- */
+
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+}
+
+.about-me,
+.student-photo {
+    background-color: #ddd;
+}
+
+.about-me p {
+    margin: 0;
+    padding: 0.4rem;
+    font-size: 0.6rem;
+    line-height: 1.15;
+}
+
+
+/* ---------- Student Photo ---------- */
+
+.photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    padding: 0.5rem;
+}
+
+.student-photo img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+/* ---------- Courses ---------- */
+
+.courses-section {
+    margin-top: 0.5rem;
+}
+
+.course-filters {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+    margin-top: 0.4rem;
+}
+
+.filter-btn {
+    width: 100%;
+    padding: 0.15rem;
+    border: 1px solid #888;
+    border-radius: 3px;
+    background-color: #ddd;
+    font-family: inherit;
+    font-size: 0.6rem;
+    cursor: pointer;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: #bbb;
+}
+
+
+/* ---------- Course List ---------- */
+
+.courses-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+    margin-top: 0.4rem;
+}
+
+.course-card {
+    padding: 0.25rem;
+    border: 1px solid #999;
+    background-color: #ddd;
+    text-align: center;
+    font-size: 0.6rem;
+}
+
+.course-card.completed {
+    background-color: #ddd;
+}
+
+
+/* ---------- Credits ---------- */
+
+.credits {
+    margin: 0.5rem 0;
+    text-align: center;
+    font-size: 0.6rem;
+}
+
+
+/* ---------- Social Links ---------- */
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.social-links a {
+    display: block;
+}
+
+.social-links img {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+    margin-top: 0.5rem;
+    padding: 0.35rem;
+    background-color: #ddd;
+    text-align: center;
+    font-size: 0.55rem;
+}
+
+footer p {
+    margin: 0.15rem 0;
+}
+
+
+/* ---------- Small Screens ---------- */
+
+@media screen and (min-width: 500px) {
+    .page-container {
+        max-width: 600px;
+    }
+}

@@ -1,0 +1,138 @@
+/* ==============================
+   W01 Course Home - Larger Screens
+   ============================== */
+
+@media screen and (min-width: 600px) {
+
+    /* ---------- Page ---------- */
+
+    body {
+        padding: 1.2rem;
+    }
+
+    .page-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+
+    /* ---------- Header ---------- */
+
+    header {
+        grid-template-columns: 48px 1fr 0;
+        min-height: 54px;
+    }
+
+    header span {
+        font-size: 0.8rem;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+
+    /* ---------- Navigation ---------- */
+
+    .navigation {
+        display: block;
+    }
+
+    .navigation ul {
+        display: flex;
+    }
+
+    .navigation li {
+        border-bottom: none;
+    }
+
+    .navigation a {
+        padding: 0.35rem 0.6rem;
+        font-size: 0.65rem;
+    }
+
+
+    /* ---------- Main ---------- */
+
+    h1 {
+        font-size: 0.95rem;
+        margin: 0.35rem 0;
+    }
+
+
+    /* ---------- About Me / Student Photo ---------- */
+
+    .about-section {
+        grid-template-columns: 2fr 1fr;
+        gap: 0.6rem;
+    }
+
+    .about-me,
+    .student-photo {
+        min-height: 142px;
+    }
+
+    .about-me p {
+        font-size: 0.58rem;
+        line-height: 1.15;
+    }
+
+    .photo-container {
+        min-height: 142px;
+    }
+
+    .student-photo img {
+        width: 110px;
+        height: 110px;
+    }
+
+
+    /* ---------- Course Filters ---------- */
+
+    .course-filters {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+
+    .filter-btn {
+        padding: 0.12rem;
+        font-size: 0.6rem;
+    }
+
+
+    /* ---------- Course Cards ---------- */
+
+    .courses-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+
+    .course-card {
+        font-size: 0.58rem;
+    }
+
+
+    /* ---------- Credits ---------- */
+
+    .credits {
+        margin: 0.5rem 0;
+        font-size: 0.58rem;
+    }
+
+
+    /* ---------- Social Links ---------- */
+
+    .social-links {
+        margin: 0.45rem 0;
+    }
+
+
+    /* ---------- Footer ---------- */
+
+    footer {
+        margin-top: 0.4rem;
+        padding: 0.3rem;
+        font-size: 0.55rem;
+    }
+
+}
