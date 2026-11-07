@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Business Directory | Abuja Chamber of Commerce</title>
+
+    <meta name="description" content="Explore the Abuja Chamber of Commerce business directory to discover local businesses, services, and organizations in Abuja, Nigeria.">
+    <meta name="author" content="Ahule Tertindi Donatus">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Open Graph Social Media Meta Tags -->
+    <meta property="og:title" content="Business Directory | Abuja Chamber of Commerce">
+    <meta property="og:description" content="Discover businesses and services in the Abuja Chamber of Commerce directory.">
+    <meta property="og:image" content="https://donatus-875.github.io/wdd231/chamber/images/og-image.webp">
+    <meta property="og:url" content="https://donatus-875.github.io/wdd231/chamber/directory.html">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts: Montserrat and Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- JavaScript -->
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-content">
+
+            <!-- Chamber Logo and Site Name -->
+            <a class="brand" href="index.html" aria-label="Abuja Chamber of Commerce home">
+                <svg class="site-logo" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 64 64" role="img" aria-label="Abuja Chamber logo">
+                    <circle cx="32" cy="32" r="30" fill="#006B3F"/>
+                    <path d="M32 10 13 24h38L32 10Z" fill="#D4A72C"/>
+                    <path d="M17 27h30v22H17z" fill="#FFFFFF"/>
+                    <path d="M23 31h5v14h-5zm13 0h5v14h-5z" fill="#006B3F"/>
+                    <path d="M13 51h38v4H13z" fill="#D4A72C"/>
+                </svg>
+
+                <span class="site-name">
+                    Abuja Chamber
+                    <small>of Commerce</small>
+                </span>
+            </a>
+
+            <!-- Mobile Navigation Button -->
+            <button
+                class="menu-button"
+                id="menu-button"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="primary-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Main Navigation -->
+            <nav class="navigation" id="primary-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html" aria-current="page">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                </ul>
+            </nav>
+
+            <!-- Dark Mode Toggle -->
+            <button
+                class="theme-button"
+                id="theme-toggle"
+                type="button"
+                aria-label="Switch to dark mode"
+                aria-pressed="false">
+                <span aria-hidden="true">☾</span>
+                <span class="theme-button-text">Dark Mode</span>
+            </button>
+
+        </div>
+    </header>
+
+    <main class="directory-main">
+
+        <!-- Page Heading -->
+        <section class="directory-intro">
+            <h1>Business Directory</h1>
+            <p>
+                Discover businesses, services, and organizations that are
+                helping Abuja grow. Connect with our chamber members and
+                support local businesses.
+            </p>
+        </section>
+
+        <!-- Directory View Controls -->
+        <section class="directory-section" aria-labelledby="directory-heading">
+
+            <div class="directory-toolbar">
+                <h2 id="directory-heading">Our Chamber Members</h2>
+
+                <div class="view-controls" role="group" aria-label="Choose directory view">
+                    <button
+                        class="view-button active"
+                        id="view-grid"
+                        type="button"
+                        aria-label="Display members in grid view"
+                        aria-pressed="true">
+                        <span aria-hidden="true">▦</span>
+                        Grid
+                    </button>
+
+                    <button
+                        class="view-button"
+                        id="view-list"
+                        type="button"
+                        aria-label="Display members in list view"
+                        aria-pressed="false">
+                        <span aria-hidden="true">☰</span>
+                        List
+                    </button>
+                </div>
+            </div>
+
+            <!-- Member Directory: populated from members.json using JavaScript -->
+            <div class="members-container grid-view" id="members-container">
+                <p class="loading-message" id="directory-message" role="status" aria-live="polite">
+                    Loading chamber members...
+                </p>
+            </div>
+
+            <noscript>
+                <p class="noscript-message">
+                    Please enable JavaScript in your browser to view the
+                    chamber member directory.
+                </p>
+            </noscript>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+
+            <!-- Chamber Contact Information -->
+            <section class="footer-contact" aria-labelledby="contact-heading">
+                <h2 id="contact-heading">Abuja Chamber of Commerce</h2>
+                <address>
+                    Abuja, Federal Capital Territory,<br>
+                    Nigeria.
+                </address>
+                <p>Email: <a href="mailto:info@abujachamber.example">info@abujachamber.example</a></p>
+                <p>Phone: <a href="tel:+2348000000000">+234 800 000 0000</a></p>
+            </section>
+
+            <!-- Social Media Links -->
+            <section class="footer-social" aria-label="Social media">
+                <h2>Connect With Us</h2>
+                <p>Follow the chamber and stay connected with local businesses.</p>
+                <div class="social-links">
+                    <!-- Replace these links with the chamber's actual social profiles when available. -->
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        Facebook
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        Instagram
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        LinkedIn
+                    </a>
+                </div>
+            </section>
+
+            <!-- Project and Copyright Information -->
+            <section class="footer-development" aria-label="Development information">
+                <p>
+                    &copy; <span id="current-year"></span>
+                    Abuja Chamber of Commerce
+                </p>
+                <p>Developed by Ahule Tertindi Donatus</p>
+                <p>WDD 231: Web Frontend Development I</p>
+                <p>Last Modified: <span id="last-modified"></span></p>
+            </section>
+
+        </div>
+    </footer>
+</body>
+</html>

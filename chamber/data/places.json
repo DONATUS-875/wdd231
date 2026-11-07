@@ -1,0 +1,66 @@
+
+[
+    {
+        "name": "Aso Rock",
+        "address": "Three Arms Zone, Abuja, Nigeria",
+        "description": "Aso Rock is one of Abuja's most recognizable natural landmarks. This massive rock formation overlooks important government institutions and contributes to the city's distinctive landscape.",
+        "image": "images/aso-rock.jpg",
+        "imageAlt": "Aso Rock rising above the Abuja landscape"
+    },
+    {
+        "name": "National Mosque",
+        "address": "Independence Avenue, Central Business District, Abuja",
+        "description": "The Nigerian National Mosque is a remarkable architectural landmark in Abuja. Its impressive golden dome and elegant minarets make it one of the city's most recognizable religious buildings.",
+        "image": "images/national-mosque.jpg",
+        "imageAlt": "The Nigerian National Mosque in Abuja"
+    },
+    {
+        "name": "National Christian Centre",
+        "address": "Central Business District, Abuja, Nigeria",
+        "description": "The National Christian Centre is an important religious and architectural landmark. Its distinctive design and central location make it a notable feature of Abuja.",
+        "image": "images/national-church.jpg",
+        "imageAlt": "The National Christian Centre building in Abuja"
+    },
+    {
+        "name": "Millennium Park",
+        "address": "Three Arms Zone, Abuja, Nigeria",
+        "description": "Millennium Park is one of Abuja's major public green spaces. Visitors enjoy its landscaped gardens, walking areas, and peaceful outdoor environment.",
+        "image": "images/millennium-park.jpg",
+        "imageAlt": "Green landscaped gardens at Millennium Park Abuja"
+    },
+    {
+        "name": "Jabi Lake",
+        "address": "Jabi District, Abuja, Nigeria",
+        "description": "Jabi Lake is a popular recreational destination in Abuja. The surrounding area offers opportunities for relaxation, outdoor activities, and enjoying scenic waterfront views.",
+        "image": "images/jabi-lake.jpg",
+        "imageAlt": "Scenic view of Jabi Lake in Abuja"
+    },
+    {
+        "name": "Arts and Crafts Village",
+        "address": "Central Business District, Abuja, Nigeria",
+        "description": "Abuja Arts and Crafts Village showcases Nigerian creativity and traditional craftsmanship. Visitors can explore handmade artwork, sculptures, textiles, and cultural souvenirs.",
+        "image": "images/arts-crafts-village.jpg",
+        "imageAlt": "Traditional Nigerian artworks and crafts at Abuja Arts and Crafts Village"
+    },
+    {
+        "name": "Moshood Abiola National Stadium",
+        "address": "National Stadium Complex, Airport Road, Abuja, Nigeria",
+        "description": "The Moshood Abiola National Stadium is a major sporting facility in Nigeria's capital. It hosts sporting competitions and other major public events.",
+        "image": "images/national-stadium.jpg",
+        "imageAlt": "Moshood Abiola National Stadium in Abuja"
+    },
+    {
+        "name": "Zuma Rock",
+        "address": "Madalla, Suleja, Niger State, near Abuja",
+        "description": "Zuma Rock is an impressive natural landmark located near Abuja along the Abuja-Kaduna expressway. Its striking appearance makes it one of the most recognizable natural attractions in the region.",
+        "image": "images/zuma-rock.jpg",
+        "imageAlt": "The impressive Zuma Rock near Abuja"
+    },
+    {
+    "name": "Gurara Falls",
+    "address": "Gurara, Niger State, Nigeria",
+    "description": "Gurara Falls is a beautiful natural waterfall surrounded by lush greenery. It is a popular destination for visitors seeking scenic views, photography and outdoor adventures.",
+    "image": "images/gurara-falls.jpg",
+    "imageAlt": "Water cascading over the rocky landscape at Gurara Falls"
+    }
+]

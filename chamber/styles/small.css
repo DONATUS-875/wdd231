@@ -1,0 +1,996 @@
+
+/* ==============================
+   GLOBAL STYLES
+================================= */
+
+:root {
+    --primary-color: #006B3F;
+    --secondary-color: #D4A72C;
+    --background-color: #FFFFFF;
+    --text-color: #222222;
+    --light-background: #F4F7F5;
+    --border-color: #D9E0DC;
+    --card-background: #FFFFFF;
+    --footer-background: #006B3F;
+    --footer-text: #FFFFFF;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.3;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--primary-color);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--primary-color);
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+/* ==============================
+   HEADER AND BRAND
+================================= */
+
+.site-header {
+    background-color: var(--background-color);
+    border-bottom: 4px solid var(--secondary-color);
+    box-shadow: var(--shadow);
+}
+
+.header-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.site-logo {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+}
+
+.site-name {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.site-name small {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* ==============================
+   MOBILE NAVIGATION BUTTON
+================================= */
+
+.menu-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    background-color: var(--background-color);
+}
+
+.menu-button span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* ==============================
+   NAVIGATION
+================================= */
+
+.navigation {
+    display: none;
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
+.navigation.open {
+    display: block;
+}
+
+.navigation ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation li {
+    border-top: 1px solid var(--border-color);
+}
+
+.navigation a {
+    display: block;
+    padding: 0.9rem 1rem;
+    color: var(--text-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.navigation a:hover,
+.navigation a:focus-visible,
+.navigation a[aria-current="page"] {
+    color: var(--primary-color);
+    background-color: var(--light-background);
+}
+
+.navigation a[aria-current="page"] {
+    border-left: 4px solid var(--secondary-color);
+}
+
+/* ==============================
+   DARK MODE BUTTON
+================================= */
+
+.theme-button {
+    grid-column: 1 / -1;
+    justify-self: start;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.theme-button:hover,
+.theme-button:focus-visible {
+    color: #FFFFFF;
+    background-color: var(--primary-color);
+}
+
+/* ==============================
+   DIRECTORY MAIN CONTENT
+================================= */
+
+.directory-main {
+    width: min(100% - 2rem, 1200px);
+    margin: 0 auto;
+    padding: 1.5rem 0 3rem;
+}
+
+.directory-intro {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.directory-intro h1 {
+    margin: 0 0 0.8rem;
+    font-size: 1.8rem;
+}
+
+.directory-intro p {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.directory-section {
+    margin-top: 2rem;
+}
+
+.directory-toolbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.directory-toolbar h2 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+/* ==============================
+   GRID AND LIST CONTROLS
+================================= */
+
+.view-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.view-button {
+    min-width: 90px;
+    padding: 0.6rem 1rem;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.view-button:hover,
+.view-button:focus-visible {
+    background-color: var(--light-background);
+}
+
+.view-button.active {
+    color: #FFFFFF;
+    background-color: var(--primary-color);
+}
+
+/* ==============================
+   MEMBER DIRECTORY GRID
+================================= */
+
+.members-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+}
+
+.member-card {
+    overflow: hidden;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.member-image {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    background-color: var(--light-background);
+}
+
+.member-info {
+    padding: 1rem;
+}
+
+.member-info h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+}
+
+.member-info p {
+    margin: 0.4rem 0;
+}
+
+.membership-level {
+    display: inline-block;
+    margin: 0.4rem 0;
+    padding: 0.25rem 0.6rem;
+    color: #222222;
+    background-color: #F5E8BD;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.member-details {
+    margin-top: 0.7rem;
+    padding-top: 0.7rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.member-website {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.member-website:hover,
+.member-website:focus-visible {
+    color: #00452A;
+}
+
+/* ==============================
+   LIST VIEW
+================================= */
+
+.members-container.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.list-view .member-card {
+    display: block;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.list-view .member-card:nth-child(even) {
+    background-color: var(--light-background);
+}
+
+.list-view .member-image {
+    display: none;
+}
+
+.list-view .member-info {
+    padding: 0;
+}
+
+.list-view .member-details {
+    border-top: none;
+}
+
+/* ==============================
+   LOADING AND ERROR MESSAGES
+================================= */
+
+.loading-message,
+.error-message,
+.noscript-message {
+    grid-column: 1 / -1;
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--light-background);
+    border-radius: 5px;
+}
+
+/* ==============================
+   FOOTER
+================================= */
+
+.site-footer {
+    color: var(--footer-text);
+    background-color: var(--footer-background);
+    border-top: 5px solid var(--secondary-color);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: min(100% - 2rem, 1200px);
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.site-footer h2 {
+    color: #FFFFFF;
+    font-size: 1.1rem;
+}
+
+.site-footer address {
+    font-style: normal;
+}
+
+.site-footer a {
+    color: #FFFFFF;
+    text-decoration: underline;
+    overflow-wrap: anywhere;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+    color: #FFE49A;
+}
+
+.footer-development {
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.footer-development p {
+    margin: 0.4rem 0;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* ==============================
+   DARK MODE
+================================= */
+
+body.dark-mode {
+    --background-color: #181C1A;
+    --text-color: #F2F2F2;
+    --light-background: #252C28;
+    --border-color: #46534B;
+    --card-background: #222925;
+    --footer-background: #101713;
+    --footer-text: #F2F2F2;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3 {
+    color: #E5C35E;
+}
+
+.dark-mode .navigation a {
+    color: #F2F2F2;
+}
+
+.dark-mode .navigation a:hover,
+.dark-mode .navigation a:focus-visible,
+.dark-mode .navigation a[aria-current="page"] {
+    color: #FFFFFF;
+    background-color: #303A34;
+}
+
+.dark-mode .view-button {
+    color: #E5C35E;
+    border-color: #E5C35E;
+}
+
+.dark-mode .view-button.active {
+    color: #181C1A;
+    background-color: #E5C35E;
+}
+
+.dark-mode .member-website {
+    color: #E5C35E;
+}
+
+.dark-mode .membership-level {
+    color: #222222;
+    background-color: #E5C35E;
+}
+
+.dark-mode .theme-button {
+    color: #E5C35E;
+    border-color: #E5C35E;
+    background-color: #181C1A;
+}
+
+/* HOME PAGE */
+
+.home-hero {
+    background: linear-gradient(120deg, #006B3F, #004D2D);
+    color: #FFFFFF;
+    padding: 3rem 1.25rem;
+    display: grid;
+    gap: 2rem;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.eyebrow {
+    color: #D4A72C;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+}
+
+.hero-content h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    line-height: 1.3;
+}
+
+.hero-content > p:not(.eyebrow) {
+    line-height: 1.8;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.85rem 1.3rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+}
+
+.btn-primary {
+    background: #D4A72C;
+    color: #222222;
+}
+
+.btn-secondary {
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+}
+
+.hero-decoration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-circle {
+    width: 220px;
+    height: 220px;
+    border: 5px solid #D4A72C;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 8px;
+}
+
+.hero-circle span {
+    letter-spacing: 4px;
+    font-size: 0.85rem;
+}
+
+.hero-circle strong {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.3rem;
+    margin: 0.6rem 0;
+}
+
+.hero-circle small {
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+}
+
+.home-intro,
+.home-benefits,
+.home-explore {
+    padding: 3rem 1.25rem;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-heading h2 {
+    font-family: "Montserrat", sans-serif;
+    color: #006B3F;
+}
+
+.home-intro > p {
+    line-height: 1.9;
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.benefit-grid,
+.explore-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.benefit-card,
+.explore-card {
+    padding: 1.5rem;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #222222;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.benefit-card {
+    text-align: center;
+}
+
+.benefit-icon {
+    font-size: 2rem;
+}
+
+.benefit-card h3,
+.explore-card h3 {
+    color: #006B3F;
+    font-family: "Montserrat", sans-serif;
+}
+
+.benefit-card p,
+.explore-card p {
+    line-height: 1.7;
+}
+
+.explore-card a {
+    display: inline-block;
+    margin-top: 0.8rem;
+    color: #006B3F;
+    font-weight: 700;
+}
+
+.home-cta {
+    background: #006B3F;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 3rem 1.25rem;
+}
+
+.home-cta h2 {
+    font-family: "Montserrat", sans-serif;
+}
+
+.home-cta p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .btn,
+    .explore-card {
+        transition: transform 0.2s ease;
+    }
+
+    .btn:hover,
+    .explore-card:hover {
+        transform: translateY(-3px);
+    }
+}
+
+
+/* JOIN PAGE */
+
+.join-hero {
+    background: linear-gradient(120deg, #006B3F, #004D2D);
+    color: #FFFFFF;
+    padding: 3rem 1.25rem;
+    text-align: center;
+}
+
+.join-hero > div {
+    max-width: 800px;
+    margin: auto;
+}
+
+.join-hero h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+}
+
+.join-hero p:not(.eyebrow) {
+    line-height: 1.8;
+}
+
+.join-section,
+.membership-benefits {
+    max-width: 1100px;
+    margin: auto;
+    padding: 3rem 1.25rem;
+}
+
+.join-layout {
+    display: grid;
+    gap: 2rem;
+}
+
+.membership-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.membership-form fieldset {
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.membership-form legend {
+    color: #006B3F;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    padding: 0 0.5rem;
+}
+
+.membership-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.membership-form input:not([type="hidden"]),
+.membership-form select,
+.membership-form textarea {
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.8rem;
+    border: 1px solid #999999;
+    border-radius: 5px;
+    font: inherit;
+    background: #FFFFFF;
+    color: #222222;
+}
+
+.membership-form input:focus,
+.membership-form select:focus,
+.membership-form textarea:focus {
+    outline: 3px solid #D4A72C;
+    outline-offset: 2px;
+}
+
+.submit-button {
+    background: #006B3F;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background: #004D2D;
+}
+
+.form-message {
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.membership-levels {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.membership-levels > h2 {
+    color: #006B3F;
+    font-family: "Montserrat", sans-serif;
+}
+
+.membership-levels > p {
+    line-height: 1.7;
+}
+
+.membership-card {
+    padding: 1.3rem;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #222222;
+    border: 1px solid #dddddd;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+    animation: card-appear 0.7s ease both;
+}
+
+.membership-card h3 {
+    font-family: "Montserrat", sans-serif;
+    margin-top: 0;
+}
+
+.membership-card p {
+    line-height: 1.6;
+}
+
+.membership-card a,
+.benefit-detail a {
+    color: #006B3F;
+    font-weight: 700;
+}
+
+.np-card {
+    border-left: 5px solid #777777;
+}
+
+.bronze-card {
+    border-left: 5px solid #A97142;
+}
+
+.silver-card {
+    border-left: 5px solid #8A969F;
+}
+
+.gold-card {
+    border-left: 5px solid #D4A72C;
+}
+
+@keyframes card-appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.benefits-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.benefit-detail {
+    padding: 1.5rem;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #222222;
+}
+
+.benefit-detail h3 {
+    color: #006B3F;
+    font-family: "Montserrat", sans-serif;
+}
+
+.benefit-detail li {
+    line-height: 1.9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .membership-card {
+        animation: none;
+    }
+}
+
+
+/* DISCOVER PAGE */
+
+.discover-hero {
+    background: linear-gradient(120deg, #006B3F, #004D2D);
+    color: #FFFFFF;
+    padding: 3.5rem 1.25rem;
+    text-align: center;
+}
+
+.discover-hero-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.discover-hero h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.5rem;
+}
+
+.discover-hero-content > p:not(.eyebrow) {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.visitor-section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 1.5rem 1.25rem 0;
+}
+
+.visitor-message {
+    background: #FFF5D6;
+    color: #222222;
+    border-left: 5px solid #D4A72C;
+    padding: 1rem 1.25rem;
+    border-radius: 5px;
+    line-height: 1.7;
+}
+
+.discover-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 3rem 1.25rem;
+}
+
+.discover-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.discover-card {
+    background: #FFFFFF;
+    color: #222222;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+}
+
+.discover-card img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.discover-card-content {
+    padding: 1.25rem;
+}
+
+.discover-card h3 {
+    font-family: "Montserrat", sans-serif;
+    color: #006B3F;
+    margin-top: 0;
+}
+
+.discover-card address {
+    font-style: normal;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.discover-card p {
+    line-height: 1.7;
+}
+
+.loading-message,
+.error-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 2rem;
+}
+
+.discover-cta {
+    background: #006B3F;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 3rem 1.25rem;
+}
+
+.discover-cta h2 {
+    font-family: "Montserrat", sans-serif;
+}
+
+.discover-cta p {
+    max-width: 750px;
+    margin: 1rem auto 1.5rem;
+    line-height: 1.8;
+}

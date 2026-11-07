@@ -1,0 +1,28 @@
+{
+  "familyName": "Isaac",
+  "moveInDate": "2025-08-15",
+  "numberOfPeople": 4,
+  "visitedByBishopric": true,
+  "familyMembers": [
+    {
+      "name": "Donatus Isaac",
+      "gender": "Male",
+      "birthdate": "1994-11-17"
+    },
+    {
+      "name": "Catherine Isaac",
+      "gender": "Female",
+      "birthdate": "1998-08-20"
+    },
+    {
+      "name": "Patrick Isaac",
+      "gender": "Male",
+      "birthdate": "2000-03-05"
+    },
+    {
+      "name": "Solomon Isaac",
+      "gender": "Male",
+      "birthdate": "2024-11-24"
+    }
+  ]
+}

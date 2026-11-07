@@ -1,0 +1,269 @@
+
+/* ==============================
+   TABLET AND DESKTOP STYLES
+================================= */
+
+@media screen and (min-width: 600px) {
+
+    /* HEADER */
+
+    .header-content {
+        grid-template-columns: auto 1fr auto;
+        gap: 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 1.5rem;
+    }
+
+    .site-logo {
+        width: 58px;
+        height: 58px;
+    }
+
+    .site-name {
+        font-size: 1.1rem;
+    }
+
+    .menu-button {
+        display: none;
+    }
+
+    /* NAVIGATION */
+
+    .navigation {
+        display: block;
+        grid-column: auto;
+        width: auto;
+    }
+
+    .navigation ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.3rem;
+    }
+
+    .navigation li {
+        border: none;
+    }
+
+    .navigation a {
+        padding: 0.7rem 0.8rem;
+        border-radius: 5px;
+    }
+
+    .navigation a[aria-current="page"] {
+        border-left: none;
+        border-bottom: 3px solid var(--secondary-color);
+    }
+
+    /* DARK MODE BUTTON */
+
+    .theme-button {
+        grid-column: auto;
+        justify-self: end;
+    }
+
+    /* DIRECTORY */
+
+    .directory-main {
+        padding-top: 2.5rem;
+    }
+
+    .directory-intro h1 {
+        font-size: 2.2rem;
+    }
+
+    .directory-toolbar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* THREE-COLUMN DIRECTORY GRID */
+
+    .members-container.grid-view {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+
+    .member-image {
+        height: 200px;
+    }
+
+    /* FOOTER */
+
+    .footer-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+        padding: 2.5rem 0;
+    }
+
+    .footer-development {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ==============================
+   WIDE DESKTOP SCREENS
+================================= */
+
+@media screen and (min-width: 900px) {
+
+    .header-content {
+        grid-template-columns: auto 1fr auto;
+    }
+
+    .navigation ul {
+        gap: 0.8rem;
+    }
+
+    .navigation a {
+        padding: 0.8rem 1rem;
+    }
+
+    .members-container.grid-view {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.8rem;
+    }
+
+    .member-card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .member-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2.5rem;
+    }
+
+    .footer-development {
+        grid-column: auto;
+        padding-top: 0;
+        border-top: none;
+    }
+}
+    
+/* HOME PAGE - LARGER SCREENS */
+
+@media screen and (min-width: 700px) {
+
+    .home-hero {
+        grid-template-columns: 1.5fr 1fr;
+        align-items: center;
+        padding: 5rem max(3rem, calc((100% - 1100px) / 2));
+    }
+
+    .hero-content h2 {
+        font-size: 2.8rem;
+    }
+
+    .hero-circle {
+        width: 270px;
+        height: 270px;
+    }
+
+    .hero-circle strong {
+        font-size: 1.6rem;
+    }
+
+    .benefit-grid,
+    .explore-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .home-intro,
+    .home-benefits,
+    .home-explore {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+}
+
+
+/* JOIN PAGE - LARGER SCREENS */
+
+@media screen and (min-width: 800px) {
+
+    .join-hero {
+        padding: 4rem 2rem;
+    }
+
+    .join-hero h2 {
+        font-size: 2.8rem;
+    }
+
+    .join-layout {
+        grid-template-columns: 1.4fr 1fr;
+        align-items: start;
+        gap: 3rem;
+    }
+
+    .membership-levels {
+        position: sticky;
+        top: 1rem;
+    }
+
+    .benefits-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* DISCOVER PAGE - LARGER SCREENS */
+
+@media screen and (min-width: 600px) {
+
+    .discover-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .discover-card img {
+        height: 230px;
+    }
+
+}
+
+@media screen and (min-width: 900px) {
+
+    .discover-hero {
+        padding: 5rem 2rem;
+    }
+
+    .discover-hero h2 {
+        font-size: 3.2rem;
+    }
+
+    .discover-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .discover-card img {
+        height: 240px;
+    }
+
+    .discover-card {
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .discover-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .discover-card {
+        transition: none;
+    }
+}
+
+
+

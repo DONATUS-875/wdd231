@@ -1,0 +1,86 @@
+
+[
+    {
+        "name": "Capital Edge Technologies",
+        "address": "Plot 18, Aminu Kano Crescent, Wuse II, Abuja",
+        "phone": "+234 800 100 0001",
+        "website": "https://capitaledgetechnologies.example",
+        "image": "capital-edge-technologies.webp",
+        "membershipLevel": 3,
+        "description": "Technology solutions, software development, and IT consulting."
+    },
+    {
+        "name": "Greenfield Agro Ventures",
+        "address": "No. 12, Garki District, Abuja",
+        "phone": "+234 800 100 0002",
+        "website": "https://greenfieldagro.example",
+        "image": "greenfield-agro.webp",
+        "membershipLevel": 2,
+        "description": "Agricultural products, food distribution, and agribusiness services."
+    },
+    {
+        "name": "Summit Crest Properties",
+        "address": "Plot 25, Jabi District, Abuja",
+        "phone": "+234 800 100 0003",
+        "website": "https://summitcrestproperties.example",
+        "image": "summit-crest-properties.webp",
+        "membershipLevel": 3,
+        "description": "Real estate development, property management, and consultancy."
+    },
+    {
+        "name": "Golden Basket Supermarket",
+        "address": "No. 7, Gimbiya Street, Area 11, Garki, Abuja",
+        "phone": "+234 800 100 0004",
+        "website": "https://goldenbasketsupermarket.example",
+        "image": "golden-basket-supermarket.webp",
+        "membershipLevel": 1,
+        "description": "Retail shopping, groceries, household goods, and everyday essentials."
+    },
+    {
+        "name": "PrimeCare Medical Services",
+        "address": "Plot 9, 4th Avenue, Gwarinpa, Abuja",
+        "phone": "+234 800 100 0005",
+        "website": "https://primecaremedical.example",
+        "image": "primecare-medical.webp",
+        "membershipLevel": 2,
+        "description": "Healthcare support, medical consultations, and wellness services."
+    },
+    {
+        "name": "Urban Bites Restaurant",
+        "address": "No. 15, Adetokunbo Ademola Crescent, Wuse II, Abuja",
+        "phone": "+234 800 100 0006",
+        "website": "https://urbanbitesrestaurant.example",
+        "image": "urban-bites-restaurant.webp",
+        "membershipLevel": 1,
+        "description": "Restaurant services offering local and international meals."
+    },
+    {
+        "name": "Royal Crest Logistics",
+        "address": "Plot 30, Central Business District, Abuja",
+        "phone": "+234 800 100 0007",
+        "website": "https://royalcrestlogistics.example",
+        "image": "royal-crest-logistics.webp",
+        "membershipLevel": 2,
+        "description": "Logistics, transportation, delivery, and supply chain services."
+    },
+    
+    {
+        "name": "Apex Financial Consultants",
+        "address": "Plot 42, Herbert Macaulay Way, Central Area, Abuja",
+        "phone": "+234 800 100 0008",
+        "website": "https://apexfinancial.example",
+        "image": "apex-financial-consultants.webp",
+        "membershipLevel": 3,
+        "description": "Professional financial advisory, accounting, business planning, and investment consulting services."
+    },
+    {
+        "name": "Prestige Events and Hospitality",
+        "address": "No. 21, Ahmadu Bello Way, Garki, Abuja",
+        "phone": "+234 800 100 0009",
+        "website": "https://prestigeevents.example",
+        "image": "prestige-events-hospitality.webp",
+        "membershipLevel": 2,
+        "description": "Event planning, catering, hospitality management, and corporate event services."
+    }
+
+]
