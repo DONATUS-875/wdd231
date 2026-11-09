@@ -227,6 +227,20 @@
         height: 230px;
     }
 
+    /* FOOTER BOTTOM - DESKTOP */
+
+.footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.2rem 2rem;
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+}
+
 }
 
 @media screen and (min-width: 900px) {

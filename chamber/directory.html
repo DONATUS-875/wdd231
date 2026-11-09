@@ -35,62 +35,59 @@
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="header-content">
+    
+<!-- HEADER -->
+<header class="site-header">
+    <div class="header-content">
 
-            <!-- Chamber Logo and Site Name -->
-            <a class="brand" href="index.html" aria-label="Abuja Chamber of Commerce home">
-                <svg class="site-logo" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 64 64" role="img" aria-label="Abuja Chamber logo">
-                    <circle cx="32" cy="32" r="30" fill="#006B3F"/>
-                    <path d="M32 10 13 24h38L32 10Z" fill="#D4A72C"/>
-                    <path d="M17 27h30v22H17z" fill="#FFFFFF"/>
-                    <path d="M23 31h5v14h-5zm13 0h5v14h-5z" fill="#006B3F"/>
-                    <path d="M13 51h38v4H13z" fill="#D4A72C"/>
+        <!-- LOGO AND BRAND NAME -->
+        <div class="brand">
+            <a href="index.html" class="site-logo"
+                aria-label="Abuja Chamber of Commerce Home">
+                <svg viewBox="0 0 60 60" width="50" height="50"
+                    role="img" aria-label="Abuja Chamber logo">
+                    <circle cx="30" cy="30" r="28" fill="#006B3F"/>
+                    <path d="M15 43V26L30 15L45 26V43H36V31H24V43Z"
+                        fill="#FFFFFF"/>
+                    <path d="M27 43V34H33V43" fill="#D4A72C"/>
+                    <path d="M12 46H48" stroke="#D4A72C" stroke-width="3"/>
                 </svg>
-
-                <span class="site-name">
-                    Abuja Chamber
-                    <small>of Commerce</small>
-                </span>
             </a>
 
-            <!-- Mobile Navigation Button -->
-            <button
-                class="menu-button"
-                id="menu-button"
-                type="button"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-                aria-controls="primary-nav">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <!-- Main Navigation -->
-            <nav class="navigation" id="primary-nav" aria-label="Main navigation">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="directory.html" aria-current="page">Directory</a></li>
-                    <li><a href="join.html">Join</a></li>
-                    <li><a href="discover.html">Discover</a></li>
-                </ul>
-            </nav>
-
-            <!-- Dark Mode Toggle -->
-            <button
-                class="theme-button"
-                id="theme-toggle"
-                type="button"
-                aria-label="Switch to dark mode"
-                aria-pressed="false">
-                <span aria-hidden="true">☾</span>
-                <span class="theme-button-text">Dark Mode</span>
-            </button>
-
+            <div class="brand-text">
+                <h1>Abuja Chamber</h1>
+                <p>of Commerce</p>
+            </div>
         </div>
-    </header>
+
+        <!-- DARK MODE BUTTON -->
+        <button id="theme-toggle" class="theme-button" type="button"
+            aria-label="Switch to dark mode" aria-pressed="false">
+            <span aria-hidden="true">☾</span>
+            <span class="theme-button-text">Dark Mode</span>
+        </button>
+
+        <!-- MOBILE MENU BUTTON -->
+        <button id="menu-button" class="menu-button" type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="primary-nav">
+            ☰
+        </button>
+
+        <!-- NAVIGATION -->
+        <nav id="primary-nav" class="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
 
     <main class="directory-main">
 

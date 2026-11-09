@@ -29,27 +29,39 @@
 <body>
 
     <!-- HEADER -->
-    <header class="site-header">
+    
 
-        <a href="index.html" class="site-logo" aria-label="Abuja Chamber of Commerce Home">
-            <svg viewBox="0 0 60 60" width="50" height="50" role="img" aria-label="Abuja Chamber logo">
-                <circle cx="30" cy="30" r="28" fill="#006B3F"/>
-                <path d="M15 43V26L30 15L45 26V43H36V31H24V43Z" fill="#FFFFFF"/>
-                <path d="M27 43V34H33V43" fill="#D4A72C"/>
-                <path d="M12 46H48" stroke="#D4A72C" stroke-width="3"/>
-            </svg>
-        </a>
+<header class="site-header">
+    <div class="header-content">
 
-        <div class="site-branding">
-            <h1>Abuja Chamber</h1>
-            <p>of Commerce</p>
+        <!-- LOGO AND BRAND NAME -->
+        <div class="brand">
+            <a href="index.html" class="site-logo"
+                aria-label="Abuja Chamber of Commerce Home">
+                <svg viewBox="0 0 60 60" width="50" height="50"
+                    role="img" aria-label="Abuja Chamber logo">
+                    <circle cx="30" cy="30" r="28" fill="#006B3F"/>
+                    <path d="M15 43V26L30 15L45 26V43H36V31H24V43Z"
+                        fill="#FFFFFF"/>
+                    <path d="M27 43V34H33V43" fill="#D4A72C"/>
+                    <path d="M12 46H48" stroke="#D4A72C" stroke-width="3"/>
+                </svg>
+            </a>
+
+            <div class="brand-text">
+                <h1>Abuja Chamber</h1>
+                <p>of Commerce</p>
+            </div>
         </div>
 
-        <button id="theme-toggle" class="theme-toggle" type="button"
-            aria-label="Toggle color theme">
-            ◐
+        <!-- DARK MODE BUTTON -->
+        <button id="theme-toggle" class="theme-button" type="button"
+            aria-label="Switch to dark mode" aria-pressed="false">
+            <span aria-hidden="true">☾</span>
+            <span class="theme-button-text">Dark Mode</span>
         </button>
 
+        <!-- MOBILE MENU BUTTON -->
         <button id="menu-button" class="menu-button" type="button"
             aria-label="Open navigation menu"
             aria-expanded="false"
@@ -57,16 +69,20 @@
             ☰
         </button>
 
-        <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
+        <!-- NAVIGATION -->
+        <nav id="primary-nav" class="navigation" aria-label="Main navigation">
             <ul>
-                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                <li><a href="index.html" aria-current="page">Home</a></li>
                 <li><a href="directory.html">Directory</a></li>
                 <li><a href="join.html">Join</a></li>
                 <li><a href="discover.html">Discover</a></li>
             </ul>
         </nav>
 
-    </header>
+    </div>
+</header>
+
+    
 
     <!-- MAIN CONTENT -->
     <main>
@@ -216,41 +232,46 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="site-footer">
+    
+<footer class="site-footer">
 
-        <div class="footer-content">
+    <div class="footer-content">
 
-            <div class="footer-contact">
-                <h2>Abuja Chamber of Commerce</h2>
-                <p>Abuja, Federal Capital Territory, Nigeria</p>
-                <p>Connecting Businesses. Creating Opportunities.</p>
-            </div>
-
-            <div class="footer-navigation">
-                <h3>Quick Links</h3>
-                <a href="index.html">Home</a>
-                <a href="directory.html">Directory</a>
-                <a href="join.html">Join</a>
-                <a href="discover.html">Discover</a>
-            </div>
-
+        <div class="footer-contact">
+            <h2>Abuja Chamber of Commerce</h2>
+            <p>Abuja, Federal Capital Territory, Nigeria</p>
+            <p>Connecting Businesses. Creating Opportunities.</p>
         </div>
 
-        <div class="footer-bottom">
-            <p>
-                &copy; <span id="current-year"></span>
-                Abuja Chamber of Commerce |
-                Ahule Tertindi Donatus |
-                WDD 231
-            </p>
-
-            <p>
-                Last Modification:
-                <span id="last-modified"></span>
-            </p>
+        <div class="footer-navigation">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="directory.html">Directory</a>
+            <a href="join.html">Join</a>
+            <a href="discover.html">Discover</a>
         </div>
 
-    </footer>
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+            &copy; <span id="current-year"></span>
+            Abuja Chamber of Commerce |
+            Ahule Tertindi Donatus |
+            WDD 231
+        </p>
+
+        <p>
+            <span aria-hidden="true">📅</span>
+            Last Modification:
+            <span id="last-modified"></span>
+        </p>
+
+    </div>
+
+</footer>
+
 
 </body>
 </html>

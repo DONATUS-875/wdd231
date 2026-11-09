@@ -1,0 +1,80 @@
+
+/* GENERAL PAGE STYLING */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #f4f7f5;
+    color: #222;
+}
+
+/* HEADER */
+header {
+    background-color: #006b3f;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* MAIN CONTENT */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* PROPHET CARDS GRID */
+#cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+/* INDIVIDUAL CARD */
+#cards section {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* PROPHET NAME */
+#cards h2 {
+    color: #006b3f;
+    font-size: 1.35rem;
+    margin-top: 0;
+}
+
+/* PROPHET IMAGE */
+#cards img {
+    width: 100%;
+    max-width: 340px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* PROPHET DETAILS */
+#cards p {
+    margin: 0.8rem 0;
+    line-height: 1.5;
+}
+
+/* FOOTER */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
