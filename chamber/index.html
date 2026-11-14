@@ -88,35 +88,120 @@
     <main>
 
         <!-- HERO SECTION -->
-        <section class="home-hero">
+        
+<section class="home-hero">
 
-            <div class="hero-content">
-                <p class="eyebrow">WELCOME TO ABUJA</p>
+    <!-- HERO CONTENT -->
+    <div class="hero-content">
+        <p class="eyebrow">WELCOME TO ABUJA</p>
 
-                <h2>Building Stronger Businesses, Creating Greater Opportunities.</h2>
+        <h2>Building Stronger Businesses, Creating Greater Opportunities.</h2>
 
-                <p>
-                    Welcome to the Abuja Chamber of Commerce, where businesses
-                    connect, partnerships grow, and opportunities become reality.
-                    Together, we are building a stronger business community in
-                    Nigeria's capital city.
-                </p>
+        <p>
+            Welcome to the Abuja Chamber of Commerce, where businesses
+            connect, partnerships grow, and opportunities become reality.
+            Together, we are building a stronger business community in
+            Nigeria's capital city.
+        </p>
 
-                <div class="hero-actions">
-                    <a href="join.html" class="btn btn-primary">Become a Member</a>
-                    <a href="directory.html" class="btn btn-secondary">Explore Directory</a>
-                </div>
-            </div>
+        <div class="hero-actions">
+            <a href="join.html" class="btn btn-primary">Become a Member</a>
+            <a href="directory.html" class="btn btn-secondary">Explore Directory</a>
+        </div>
+    </div>
 
-            <div class="hero-decoration" aria-hidden="true">
-                <div class="hero-circle">
-                    <span>ABUJA</span>
-                    <strong>BUSINESS<br>COMMUNITY</strong>
-                    <small>CONNECT · GROW · SUCCEED</small>
-                </div>
-            </div>
+    <!-- HERO IMAGE -->
+    <div class="hero-image">
+        <img
+            src="images/abuja-cbd-hero.webp"
+            alt="Modern office buildings in Abuja Central Business District"
+            width="1200"
+            height="800"
+            fetchpriority="high"
+        >
+    </div>
 
-        </section>
+</section>
+
+
+<!-- CURRENT EVENTS -->
+<section class="current-events" aria-labelledby="events-heading">
+
+    <div class="section-heading">
+        <p class="eyebrow">WHAT'S HAPPENING</p>
+        <h2 id="events-heading">Upcoming Chamber Events</h2>
+        <p>
+            Explore opportunities to connect, learn and grow your business
+            through Chamber activities.
+        </p>
+    </div>
+
+    <div class="events-container">
+
+        <article class="event-card">
+            <p class="event-category">NETWORKING</p>
+            <h3>Business Networking Forum</h3>
+            <p>
+                An opportunity for business owners and professionals
+                to connect, build relationships and explore partnerships.
+            </p>
+            <p class="event-date">Date: To be announced</p>
+        </article>
+
+        <article class="event-card">
+            <p class="event-category">TRAINING</p>
+            <h3>SME Growth Workshop</h3>
+            <p>
+                A proposed learning session focused on business development,
+                entrepreneurship and practical growth strategies.
+            </p>
+            <p class="event-date">Date: To be announced</p>
+        </article>
+
+        <article class="event-card">
+            <p class="event-category">BUSINESS</p>
+            <h3>Trade and Investment Forum</h3>
+            <p>
+                A proposed forum for exploring trade opportunities
+                and encouraging business collaboration.
+            </p>
+            <p class="event-date">Date: To be announced</p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- WEATHER SECTION -->
+<section class="weather-section" aria-labelledby="weather-heading">
+
+    <div class="section-heading">
+        <p class="eyebrow">ABUJA WEATHER</p>
+        <h2 id="weather-heading">Weather Information</h2>
+        <p>Check current weather conditions and the upcoming forecast for Abuja.</p>
+    </div>
+
+    <!-- CURRENT WEATHER -->
+    <div class="current-weather" id="current-weather">
+        <p role="status" aria-live="polite">
+            Loading current weather...
+        </p>
+    </div>
+
+    <!-- THREE-DAY FORECAST -->
+    <div class="forecast-section">
+        <h3>Three-Day Forecast</h3>
+
+        <div class="forecast-container" id="forecast-container">
+            <p role="status" aria-live="polite">
+                Loading weather forecast...
+            </p>
+        </div>
+    </div>
+
+</section>
+
 
         <!-- INTRODUCTION -->
         <section class="home-intro">
@@ -218,6 +303,25 @@
             </div>
 
         </section>
+
+
+<!-- COMPANY SPOTLIGHTS -->
+<section class="company-spotlights" aria-labelledby="spotlights-heading">
+
+    <div class="section-heading">
+        <p class="eyebrow">CHAMBER MEMBERS</p>
+        <h2 id="spotlights-heading">Business Spotlights</h2>
+        <p>Discover some of the outstanding businesses in our chamber.</p>
+    </div>
+
+    <div class="spotlights-container" id="spotlights-container">
+        <p role="status" aria-live="polite">
+            Loading featured businesses...
+        </p>
+    </div>
+
+</section>
+
 
         <!-- CALL TO ACTION -->
         <section class="home-cta">

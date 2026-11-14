@@ -4,6 +4,8 @@
    MAIN JAVASCRIPT
 ========================================= */
 
+/* OPENWEATHER API CONFIGURATION */
+const WEATHER_API_KEY = "76759025518ee8df02683967036f4e11"
 
 /* =========================================
    1. MOBILE NAVIGATION
@@ -303,7 +305,351 @@ if (lastModified) {
 
 
 /* =========================================
-   10. INITIALIZE DIRECTORY
+   COMPANY SPOTLIGHTS - W03 HOME PAGE
+========================================= */
+
+// Create an individual company spotlight card.
+function createSpotlightCard(member) {
+    const card = document.createElement("article");
+    card.classList.add("spotlight-card");
+
+    // Company logo/image
+    const image = document.createElement("img");
+    image.src = `images/${member.image}`;
+    image.alt = `${member.name} logo`;
+    image.loading = "lazy";
+    image.width = 400;
+    image.height = 250;
+
+    image.addEventListener("error", () => {
+        image.remove();
+    });
+
+    // Company information
+    const info = document.createElement("div");
+    info.classList.add("spotlight-info");
+
+    const name = document.createElement("h3");
+    name.textContent = member.name;
+
+    const membership = document.createElement("span");
+    membership.classList.add("membership-level");
+    membership.textContent = getMembershipName(member.membershipLevel);
+
+    const description = document.createElement("p");
+    description.textContent = member.description;
+
+    const address = document.createElement("p");
+    address.textContent = `Address: ${member.address}`;
+
+    const phone = document.createElement("p");
+    const phoneLink = document.createElement("a");
+    phoneLink.href = `tel:${member.phone.replace(/[^\d+]/g, "")}`;
+    phoneLink.textContent = member.phone;
+    phone.append("Phone: ", phoneLink);
+
+    // Website link
+    const websiteParagraph = document.createElement("p");
+
+    try {
+        const websiteURL = new URL(member.website);
+
+        if (["http:", "https:"].includes(websiteURL.protocol)) {
+            const websiteLink = document.createElement("a");
+            websiteLink.href = websiteURL.href;
+            websiteLink.textContent = "Visit Website";
+            websiteLink.target = "_blank";
+            websiteLink.rel = "noopener noreferrer";
+
+            websiteParagraph.appendChild(websiteLink);
+        } else {
+            websiteParagraph.textContent = "Website unavailable";
+        }
+    } catch {
+        websiteParagraph.textContent = "Website unavailable";
+    }
+
+    info.append(
+        name,
+        membership,
+        description,
+        address,
+        phone,
+        websiteParagraph
+    );
+
+    card.append(image, info);
+
+    return card;
+}
+
+
+// Fetch and randomly display two or three Gold/Silver members.
+async function getSpotlights() {
+    const spotlightsContainer = document.querySelector(
+        "#spotlights-container"
+    );
+
+    // Do nothing if this is not the home page.
+    if (!spotlightsContainer) {
+        return;
+    }
+
+    try {
+        const response = await fetch("data/members.json");
+
+        if (!response.ok) {
+            throw new Error(`Unable to load members: ${response.status}`);
+        }
+
+        const members = await response.json();
+
+        // Only Gold (3) and Silver (2) members qualify.
+        const eligibleMembers = members.filter(
+            (member) =>
+                Number(member.membershipLevel) === 2 ||
+                Number(member.membershipLevel) === 3
+        );
+
+        if (eligibleMembers.length < 2) {
+            throw new Error("Not enough eligible spotlight members.");
+        }
+
+        // Randomly shuffle eligible members.
+        const shuffledMembers = [...eligibleMembers];
+
+        for (let i = shuffledMembers.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+
+            [shuffledMembers[i], shuffledMembers[j]] =
+                [shuffledMembers[j], shuffledMembers[i]];
+        }
+
+        // Randomly display either two or three members.
+        const numberOfSpotlights = Math.min(
+            Math.floor(Math.random() * 2) + 2,
+            shuffledMembers.length
+        );
+
+        const selectedMembers = shuffledMembers.slice(
+            0,
+            numberOfSpotlights
+        );
+
+        // Clear loading message.
+        spotlightsContainer.replaceChildren();
+
+        // Display selected business cards.
+        selectedMembers.forEach((member) => {
+            const card = createSpotlightCard(member);
+            spotlightsContainer.appendChild(card);
+        });
+
+    } catch (error) {
+        console.error("Error loading company spotlights:", error);
+
+        spotlightsContainer.textContent =
+            "Company spotlights are temporarily unavailable.";
+    }
+}
+
+/* =========================================
+   INITIALIZE DIRECTORY AND SPOTLIGHTS
 ========================================= */
 
 getMembers();
+getSpotlights();
+
+/* =========================================
+   ABUJA WEATHER API
+========================================= */
+
+// Abuja coordinates
+const ABUJA_LAT = 9.0765;
+const ABUJA_LON = 7.3986;
+
+// Display current weather
+function displayCurrentWeather(data) {
+    const weatherContainer = document.querySelector("#current-weather");
+
+    if (!weatherContainer) return;
+
+    const description = data.weather[0].description;
+    const icon = data.weather[0].icon;
+
+    weatherContainer.innerHTML = `
+        <div class="weather-card">
+            <h3>Current Weather in Abuja</h3>
+
+            <img
+                src="https://openweathermap.org/img/wn/${icon}@2x.png"
+                alt="${description}"
+                width="100"
+                height="100"
+            >
+
+            <p class="current-temperature">
+                ${Math.round(data.main.temp)}°C
+            </p>
+
+            <p class="weather-description">
+                ${description}
+            </p>
+        </div>
+    `;
+}
+
+
+// Get Abuja's local date
+function getAbujaDateKey(timestamp) {
+    const parts = new Intl.DateTimeFormat("en-GB", {
+        timeZone: "Africa/Lagos",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+    }).formatToParts(new Date(timestamp * 1000));
+
+    const year = parts.find(part => part.type === "year").value;
+    const month = parts.find(part => part.type === "month").value;
+    const day = parts.find(part => part.type === "day").value;
+
+    return `${year}-${month}-${day}`;
+}
+
+
+// Display three-day forecast
+function displayForecast(data) {
+    const forecastContainer = document.querySelector("#forecast-container");
+
+    if (!forecastContainer) return;
+
+    forecastContainer.innerHTML = "";
+
+    const today = getAbujaDateKey(Date.now() / 1000);
+
+    const groupedForecast = {};
+
+    data.list.forEach(entry => {
+        const date = getAbujaDateKey(entry.dt);
+
+        // Exclude today's remaining forecast
+        if (date <= today) return;
+
+        if (!groupedForecast[date]) {
+            groupedForecast[date] = [];
+        }
+
+        groupedForecast[date].push(entry);
+    });
+
+    const forecastDays = Object.keys(groupedForecast)
+        .sort()
+        .slice(0, 3);
+
+    forecastDays.forEach(date => {
+        const entries = groupedForecast[date];
+
+        // Choose the forecast closest to midday in Abuja
+        const middayForecast = entries.reduce((closest, entry) => {
+            const hourParts = new Intl.DateTimeFormat("en-GB", {
+                timeZone: "Africa/Lagos",
+                hour: "2-digit",
+                hourCycle: "h23"
+            }).formatToParts(new Date(entry.dt * 1000));
+
+            const hour = Number(
+                hourParts.find(part => part.type === "hour").value
+            );
+
+            const closestHour = Number(
+                new Intl.DateTimeFormat("en-GB", {
+                    timeZone: "Africa/Lagos",
+                    hour: "2-digit",
+                    hourCycle: "h23"
+                }).format(new Date(closest.dt * 1000))
+            );
+
+            return Math.abs(hour - 12) < Math.abs(closestHour - 12)
+                ? entry
+                : closest;
+        });
+
+        const dayName = new Intl.DateTimeFormat("en-NG", {
+            weekday: "long",
+            day: "numeric",
+            month: "short",
+            timeZone: "Africa/Lagos"
+        }).format(new Date(middayForecast.dt * 1000));
+
+        const description = middayForecast.weather[0].description;
+        const icon = middayForecast.weather[0].icon;
+        const temperature = Math.round(middayForecast.main.temp);
+
+        const card = document.createElement("article");
+        card.classList.add("forecast-card");
+
+        card.innerHTML = `
+            <h4>${dayName}</h4>
+
+            <img
+                src="https://openweathermap.org/img/wn/${icon}@2x.png"
+                alt="${description}"
+                width="80"
+                height="80"
+            >
+
+            <p class="forecast-temperature">
+                ${temperature}°C
+            </p>
+
+            <p>${description}</p>
+        `;
+
+        forecastContainer.appendChild(card);
+    });
+
+    if (forecastDays.length === 0) {
+        forecastContainer.textContent =
+            "The forecast is currently unavailable.";
+    }
+}
+
+
+// Fetch current weather and forecast
+async function getAbujaWeather() {
+    const currentWeatherUrl =
+        `https://api.openweathermap.org/data/2.5/weather?lat=${ABUJA_LAT}&lon=${ABUJA_LON}&units=metric&appid=${WEATHER_API_KEY}`;
+
+    const forecastUrl =
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${ABUJA_LAT}&lon=${ABUJA_LON}&units=metric&appid=${WEATHER_API_KEY}`;
+
+    try {
+        const [currentResponse, forecastResponse] = await Promise.all([
+            fetch(currentWeatherUrl),
+            fetch(forecastUrl)
+        ]);
+
+        if (!currentResponse.ok || !forecastResponse.ok) {
+            throw new Error("Unable to retrieve weather data.");
+        }
+
+        const currentData = await currentResponse.json();
+        const forecastData = await forecastResponse.json();
+
+        displayCurrentWeather(currentData);
+        displayForecast(forecastData);
+
+    } catch (error) {
+        console.error("Weather error:", error);
+
+        document.querySelector("#current-weather").textContent =
+            "Unable to load current weather. Please try again later.";
+
+        document.querySelector("#forecast-container").textContent =
+            "Unable to load the weather forecast.";
+    }
+}
+
+
+// Start weather display
+getAbujaWeather();
