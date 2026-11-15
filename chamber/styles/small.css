@@ -549,7 +549,7 @@ body.dark-mode {
     margin-top: 1.5rem;
 }
 
-.btn {
+.action-button {
     display: inline-block;
     padding: 0.85rem 1.3rem;
     border-radius: 5px;
@@ -558,12 +558,12 @@ body.dark-mode {
     text-align: center;
 }
 
-.btn-primary {
+.action-button-primary {
     background: #D4A72C;
     color: #222222;
 }
 
-.btn-secondary {
+.action-button-secondary {
     border: 2px solid #FFFFFF;
     color: #FFFFFF;
 }
@@ -688,12 +688,12 @@ body.dark-mode {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .btn,
+    .home-action-button,
     .explore-card {
         transition: transform 0.2s ease;
     }
 
-    .btn:hover,
+    .home-action-button:hover,
     .explore-card:hover {
         transform: translateY(-3px);
     }
