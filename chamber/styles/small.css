@@ -1092,7 +1092,7 @@ body.dark-mode {
     overflow-wrap: anywhere;
 }
 
-.membership-level {
+.spotlight-card.membership-level {
     display: inline-block;
     margin-bottom: 0.75rem;
     padding: 0.35rem 0.8rem;
