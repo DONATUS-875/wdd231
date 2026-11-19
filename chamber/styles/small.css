@@ -1265,3 +1265,52 @@ body.dark-mode {
 .forecast-card p:last-child {
     text-transform: capitalize;
 }
+
+
+/* MEMBERSHIP MODALS */
+
+.membership-modal {
+    width: min(90%, 500px);
+    max-width: 500px;
+    padding: 2rem;
+    border: none;
+    border-radius: 12px;
+    margin: auto;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    background-color: #FFFFFF;
+    color: #222222;
+}
+
+.membership-modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.membership-modal h2 {
+    color: #006B3F;
+    margin-bottom: 1rem;
+}
+
+.membership-modal li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.close-modal {
+    background-color: #006B3F;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    background-color: #004D2D;
+}
+
+.close-modal:focus-visible,
+.membership-modal-link:focus-visible {
+    outline: 3px solid #D4A72C;
+    outline-offset: 3px;
+}

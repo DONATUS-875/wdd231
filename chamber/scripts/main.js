@@ -653,3 +653,35 @@ async function getAbujaWeather() {
 
 // Start weather display
 getAbujaWeather();
+
+
+// MEMBERSHIP MODAL FUNCTIONALITY
+
+const membershipModalLinks = document.querySelectorAll(".membership-modal-link");
+
+membershipModalLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const modalId = link.dataset.modal;
+        const modal = document.getElementById(modalId);
+
+        if (modal) {
+            modal.showModal();
+        }
+    });
+});
+
+// CLOSE MEMBERSHIP MODALS
+
+const closeModalButtons = document.querySelectorAll(".close-modal");
+
+closeModalButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const modal = button.closest("dialog");
+
+        if (modal) {
+            modal.close();
+        }
+    });
+});

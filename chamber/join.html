@@ -111,7 +111,7 @@
             <div class="join-layout">
 
                 <!-- APPLICATION FORM -->
-                <form class="membership-form" id="membership-form">
+                <form class="membership-form" id="membership-form" method="get" action="thankyou.html">
 
                     <fieldset>
                         <legend>Applicant Information</legend>
@@ -146,7 +146,7 @@
                                 name="organizationalTitle"
                                 title="Enter your organizational title"
                                 autocomplete="organization-title"
-                                pattern="[A-Za-z\s\-]{7,}"
+                                pattern="[A-Za-z -]{7,}"
                                 placeholder="e.g. Managing Director"
                                 required>
                         </label>
@@ -195,10 +195,10 @@
                             Membership Level
                             <select id="membership-level" name="membershipLevel" required>
                                 <option value="" disabled selected>Select a membership level</option>
-                                <option value="NP">NP Membership</option>
-                                <option value="Bronze">Bronze Membership</option>
-                                <option value="Silver">Silver Membership</option>
-                                <option value="Gold">Gold Membership</option>
+                                <option value="np">NP Membership</option>
+                                <option value="bronze">Bronze Membership</option>
+                                <option value="silver">Silver Membership</option>
+                                <option value="gold">Gold Membership</option>
                             </select>
                         </label>
 
@@ -216,9 +216,9 @@
 
                     <input type="hidden" id="form-timestamp" name="timestamp">
 
-                    <button type="submit" class="submit-button">
-                        Submit Membership Application
-                    </button>
+                    <input type="submit" class="submit-button" 
+                           value="Submit Membership Application">
+                        
 
                     <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
 
@@ -233,25 +233,33 @@
                     <article class="membership-card np-card">
                         <h3>NP Membership</h3>
                         <p>For eligible nonprofit organizations.</p>
-                        <a href="#np-benefits">View Benefits</a>
+                        <a href="#np-modal" class="membership-modal-link" data-modal="np-modal">
+                            View Benefits
+                        </a>
                     </article>
 
                     <article class="membership-card bronze-card">
                         <h3>Bronze Membership</h3>
                         <p>Essential opportunities for growing businesses.</p>
-                        <a href="#bronze-benefits">View Benefits</a>
+                        <a href="#bronze-modal" class="membership-modal-link" data-modal="bronze-modal">
+                            View Benefits
+                        </a>
                     </article>
 
                     <article class="membership-card silver-card">
                         <h3>Silver Membership</h3>
                         <p>Greater visibility and business development opportunities.</p>
-                        <a href="#silver-benefits">View Benefits</a>
+                        <a href="#silver-modal" class="membership-modal-link" data-modal="silver-modal">
+                            View Benefits
+                        </a>
                     </article>
 
                     <article class="membership-card gold-card">
                         <h3>Gold Membership</h3>
                         <p>Premium recognition and networking opportunities.</p>
-                        <a href="#gold-benefits">View Benefits</a>
+                        <a href="#gold-modal" class="membership-modal-link" data-modal="gold-modal">
+                            View Benefits
+                        </a>
                     </article>
 
                 </aside>
@@ -261,56 +269,52 @@
         </section>
 
         <!-- MEMBERSHIP BENEFITS -->
-        <section class="membership-benefits" id="membership-benefits">
+        
+<!-- NP MEMBERSHIP MODAL -->
+<dialog id="np-modal" class="membership-modal">
+    <h2>NP Membership Benefits</h2>
+    <ul>
+        <li>Access to Chamber networking opportunities.</li>
+        <li>Participation in selected community activities.</li>
+        <li>Access to eligible nonprofit support programs.</li>
+    </ul>
+    <button type="button" class="close-modal">Close</button>
+</dialog>
 
-            <div class="section-heading">
-                <p class="eyebrow">MEMBER ADVANTAGES</p>
-                <h2>Membership Benefits</h2>
-                <p>Explore the opportunities available at each membership level.</p>
-            </div>
+<!-- BRONZE MEMBERSHIP MODAL -->
+<dialog id="bronze-modal" class="membership-modal">
+    <h2>Bronze Membership Benefits</h2>
+    <ul>
+        <li>Business networking opportunities.</li>
+        <li>Business directory listing.</li>
+        <li>Access to selected Chamber events.</li>
+    </ul>
+    <button type="button" class="close-modal">Close</button>
+</dialog>
 
-            <div class="benefits-list">
+<!-- SILVER MEMBERSHIP MODAL -->
+<dialog id="silver-modal" class="membership-modal">
+    <h2>Silver Membership Benefits</h2>
+    <ul>
+        <li>All Bronze membership benefits.</li>
+        <li>Additional business promotional opportunities.</li>
+        <li>Discounts on selected events and training.</li>
+    </ul>
+    <button type="button" class="close-modal">Close</button>
+</dialog>
 
-                <article id="np-benefits" class="benefit-detail">
-                    <h3>NP Membership</h3>
-                    <ul>
-                        <li>Access to Chamber networking opportunities.</li>
-                        <li>Participation in selected community activities.</li>
-                        <li>Access to eligible nonprofit support programs.</li>
-                    </ul>
-                </article>
+<!-- GOLD MEMBERSHIP MODAL -->
+<dialog id="gold-modal" class="membership-modal">
+    <h2>Gold Membership Benefits</h2>
+    <ul>
+        <li>All Silver membership benefits.</li>
+        <li>Premium business recognition opportunities.</li>
+        <li>Priority access to selected networking events.</li>
+        <li>Additional promotional opportunities.</li>
+    </ul>
+    <button type="button" class="close-modal">Close</button>
+</dialog>
 
-                <article id="bronze-benefits" class="benefit-detail">
-                    <h3>Bronze Membership</h3>
-                    <ul>
-                        <li>Business networking opportunities.</li>
-                        <li>Business directory listing.</li>
-                        <li>Access to selected Chamber events.</li>
-                    </ul>
-                </article>
-
-                <article id="silver-benefits" class="benefit-detail">
-                    <h3>Silver Membership</h3>
-                    <ul>
-                        <li>All Bronze membership benefits.</li>
-                        <li>Additional business promotional opportunities.</li>
-                        <li>Discounts on selected events and training.</li>
-                    </ul>
-                </article>
-
-                <article id="gold-benefits" class="benefit-detail">
-                    <h3>Gold Membership</h3>
-                    <ul>
-                        <li>All Silver membership benefits.</li>
-                        <li>Premium business recognition opportunities.</li>
-                        <li>Priority access to selected networking events.</li>
-                        <li>Additional promotional opportunities.</li>
-                    </ul>
-                </article>
-
-            </div>
-
-        </section>
 
     </main>
 
