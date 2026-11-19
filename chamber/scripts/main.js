@@ -685,3 +685,42 @@ closeModalButtons.forEach((button) => {
         }
     });
 });
+
+
+// DISPLAY MEMBERSHIP APPLICATION INFORMATION
+
+const applicationDetails = document.querySelector(".application-details");
+
+if (applicationDetails) {
+
+    const params = new URLSearchParams(window.location.search);
+
+    // Retrieve submitted form information
+    const firstName = params.get("firstName");
+    const lastName = params.get("lastName");
+    const email = params.get("email");
+    const phone = params.get("phone");
+    const businessName = params.get("businessName");
+    const timestamp = params.get("timestamp");
+
+    // Display applicant information
+    document.querySelector("#display-first-name").textContent = firstName || "Not provided";
+
+    document.querySelector("#display-last-name").textContent = lastName || "Not provided";
+
+    document.querySelector("#display-email").textContent = email || "Not provided";
+
+    document.querySelector("#display-phone").textContent = phone || "Not provided";
+
+    document.querySelector("#display-business").textContent = businessName || "Not provided";
+
+    // Format and display timestamp
+    const formattedDate = timestamp
+        ? new Date(timestamp).toLocaleString("en-NG", {
+            dateStyle: "long",
+            timeStyle: "short"
+        })
+        : "Not available";
+
+    document.querySelector("#display-timestamp").textContent = formattedDate;
+}

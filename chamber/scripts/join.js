@@ -1,4 +1,22 @@
 
+
+// JOIN PAGE FORM
+
+const membershipForm = document.querySelector("#membership-form");
+
+// Set the timestamp when the join page loads
+if (membershipForm) {
+    const timestampField = document.querySelector("#form-timestamp");
+
+    if (timestampField) {
+        timestampField.value = new Date().toISOString();
+    }
+}
+
+
+
+
+/*
 // JOIN PAGE FORM
 
 const membershipForm = document.querySelector("#membership-form");
@@ -25,3 +43,4 @@ if (membershipForm) {
         membershipForm.reset();
     });
 }
+*/
